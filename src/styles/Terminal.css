@@ -1,0 +1,187 @@
+/* Estilo para a tela inteira */
+body, html, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: black; /* Cor do fundo */
+  font-family: 'VT323', monospace; /* Fonte com estilo de terminal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Janela de terminal com barra superior estilo Mac anos 80 */
+.terminal-container {
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  /* box-shadow: 0 0 15px rgba(0, 255, 0, 0.7); */
+  background-color: black;
+  width: 90%;
+  max-width: 800px;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Barra superior com botões */
+.terminal-header {
+  background-color: #222;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  /* border-bottom: 1px solid #33ff33; */
+}
+
+.terminal-header .buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.terminal-header .buttons span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.terminal-header .close { background-color: #ff5f56; }
+.terminal-header .minimize { background-color: #ffbd2e; }
+.terminal-header .maximize { background-color: #27c93f; }
+
+/* Estilo do terminal */
+.terminal {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  padding: 15px;
+  overflow-y: auto;
+  border: 1px solid #333;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-title {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.terminal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.command-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.prompt {
+  color: #fff;
+  font-weight: 400;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+}
+
+.output {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #fff;
+}
+
+.error {
+  color: #ff6b6b;
+}
+
+.success {
+  color: #fff;
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #fff;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Estilo para as linhas de log */
+.terminal div {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Estilo para mensagens de erro */
+.terminal div:contains('[ERRO]') {
+  color: #f00;
+}
+
+/* Estilo para mensagens de sucesso */
+.terminal div:contains('[DHARMA]') {
+  color: #0ff;
+}
+
+/* Estilo para mensagens de sistema */
+.terminal div:contains('[SYS]') {
+  color: #ff0;
+}
+
+/* Estilo para mensagens de aviso */
+.terminal div:contains('[WARNING]') {
+  color: #f80;
+}
+
+/* Estilo para mensagens de segurança */
+.terminal div:contains('[SECURITY]') {
+  color: #f0f;
+}
+
+.terminal input {
+  background-color: transparent;
+  border: none;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  outline: none;
+  width: calc(100% - 20px);
+}
+
+.terminal input:focus {
+  outline: none;
+}

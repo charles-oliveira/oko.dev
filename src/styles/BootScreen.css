@@ -1,0 +1,164 @@
+.boot-screen {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.boot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.logo-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.logo-text {
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  letter-spacing: 2px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: #ccc;
+  /* text-shadow: 0 0 10px rgba(0, 255, 0, 0.5); */
+}
+
+.eye-container {
+  position: relative;
+  width: 1.2em;
+  height: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  /* box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); */
+}
+
+.eye.open {
+  height: 100%;
+}
+
+.eye.closed {
+  height: 0.2em;
+}
+
+.pupil {
+  position: absolute;
+  width: 0.4em;
+  height: 0.4em;
+  background-color: #000;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.boot-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.boot-message {
+  font-size: 16px;
+  color: #ccc;
+  opacity: 0.8;
+  min-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.boot-progress {
+  width: 200px;
+  height: 2px;
+  background-color: #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.boot-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #ccc;
+  width: 0;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.boot-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #ccc;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.audio-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #ccc;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+.audio-toggle:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
+
+@keyframes blink {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+  

@@ -1,0 +1,346 @@
+.perpetual {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #333;
+  position: relative;
+  overflow: hidden;
+}
+
+.game-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 1px solid #00ff00;
+  margin-bottom: 20px;
+}
+
+.game-info {
+  display: flex;
+  gap: 20px;
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.terminal-button {
+  background-color: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+}
+
+.terminal-button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.perpetual-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+  position: relative;
+}
+
+.perpetual-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #fff;
+  max-width: 600px;
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: 'Courier New', monospace;
+}
+
+.perpetual-line {
+  margin-bottom: 5px;
+}
+
+.perpetual-word {
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.perpetual-word:hover {
+  color: #00ff00;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.perpetual-word.clue {
+  cursor: pointer;
+  position: relative;
+}
+
+.perpetual-word.clue:hover {
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.7);
+}
+
+.perpetual-word.found {
+  color: #00ff00;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.9);
+}
+
+.terminal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.terminal {
+  background-color: #000;
+  border: 1px solid #00ff00;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.terminal h3 {
+  color: #00ff00;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+.terminal input {
+  background-color: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 8px;
+  width: 100%;
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.terminal button {
+  background-color: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 5px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.terminal button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.game-message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  text-align: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.game-message button {
+  background-color: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  padding: 8px 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.game-message button:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.hover-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 10px 20px;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 100;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Scrollbar personalizada */
+.perpetual-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.perpetual-content::-webkit-scrollbar-track {
+  background: #000;
+}
+
+.perpetual-content::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+.perpetual-content::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+/* Estilo para cabeçalhos */
+.perpetual-text .header {
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Estilo para alertas */
+.perpetual-text .alert {
+  color: #f00;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  }
+  to {
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  }
+}
+
+.boot-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeOut 0.5s ease 2.5s forwards;
+}
+
+.boot-text {
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.boot-line {
+  display: block;
+  opacity: 0;
+  animation: typeIn 0.5s ease forwards;
+}
+
+.boot-line:nth-child(1) { animation-delay: 0.5s; }
+.boot-line:nth-child(2) { animation-delay: 1s; }
+.boot-line:nth-child(3) { animation-delay: 1.5s; }
+.boot-line:nth-child(4) { animation-delay: 2s; }
+
+@keyframes typeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.header-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.audio-toggle {
+  background: transparent;
+  border: 1px solid #00ff00;
+  color: #00ff00;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.audio-toggle:hover {
+  background-color: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+} 
