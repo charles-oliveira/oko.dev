@@ -1,54 +1,66 @@
-# React + TypeScript + Vite
+# 0ko.dev - Sistema Operacional Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema operacional web que combina a nostalgia dos sistemas antigos (Windows 95/98) com a estética minimalista de Dieter Rams e a atmosfera misteriosa da série Severance.
 
-Currently, two official plugins are available:
+## 🎯 Inspiração
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Sistemas Antigos**: Interface clássica do Windows 95/98, com sua estética retro e funcionalidade direta
+- **Dieter Rams**: Princípios de design "Menos, mas melhor", foco na usabilidade e estética minimalista
+- **Severance**: Atmosfera misteriosa, dualidade entre mundos, e interface corporativa vintage
 
-## Expanding the ESLint configuration
+## 🚀 Funcionalidades
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Interface retro com elementos modernos
+- BootScreen animado com mensagens de sistema
+- Terminal interativo com comandos personalizados
+- Janelas redimensionáveis estilo Windows 95
+- Menu do sistema minimalista
+- Design responsivo e acessível
+- Transições suaves entre estados
+- Temas claro/escuro inspirados em Severance
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🛠️ Tecnologias Utilizadas
+
+- React
+- TypeScript
+- Vite
+- CSS Modules
+- ESLint
+
+## 📦 Instalação
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/ch4rle2/0ko.dev.git
+cd 0ko.dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Instale as dependências:
+```bash
+npm install
 ```
+
+3. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+## 🎨 Estrutura do Projeto
+
+```
+src/
+  ├── components/     # Componentes React
+  ├── styles/        # Arquivos CSS
+  ├── types/         # Definições de tipos TypeScript
+  └── App.tsx        # Componente principal
+```
+
+## 📝 Licença
+
+Este projeto está sob a licença MIT.
+
+## 👨‍💻 Autor
+
+Charles Oliveira
+
+
